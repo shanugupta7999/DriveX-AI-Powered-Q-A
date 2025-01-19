@@ -18,7 +18,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const response = await axios.post('https://drive-x-ai.onrender.com/upload', formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -40,7 +40,7 @@ function App() {
     if (!question || !documentData) return alert("Provide a question and upload a document.");
 
     try {
-      const response = await axios.post('http://localhost:5000/ask', {
+      const response = await axios.post('https://drive-x-ai.onrender.com/ask', {
         question,
         document: documentData,
       });
